@@ -6,7 +6,13 @@ Blue Sky Tool is developed as an advanced version of OMSI Map Tools. Blue Sky al
 
 Auto detects light/dark theme based on Windows 10+ app mode setting.
 
-Automatically changes light/dark theme at runtime.
+Automatically changes light/dark theme while running.
+
+**💖 Thanks to:**
+
+- **[AngryCarrot789](https://github.com/AngryCarrot789)** for creating **[WPFDarkTheme](https://github.com/AngryCarrot789/WPFDarkTheme)** - simple & easy to use dark theme that respects default WPF controls
+
+- **[DerekGooding](https://github.com/DerekGooding)** for **[updating](https://github.com/AngryCarrot789/WPFDarkTheme/pull/32)** **[WPFDarkTheme](https://github.com/DerekGooding/WPFDarkTheme)** to .NET 8
 
 Preview:
 
