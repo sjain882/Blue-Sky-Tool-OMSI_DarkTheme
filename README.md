@@ -2,6 +2,18 @@
 
 Blue Sky Tool is developed as an advanced version of OMSI Map Tools. Blue Sky allows users to scan for missing objects, splines, AI Vehicles, parked cars, humans and drivers.
 
+## Modified to include dark theme:
+
+Auto detects light/dark theme based on Windows 10+ app mode setting.
+
+Automatically changes light/dark theme at runtime.
+
+Preview:
+
+<img src="https://github.com/sjain882/Blue-Sky-Tool-OMSI_DarkTheme/Previews/1.png?raw=true" width="60%" height="60%"/>
+
+<img src="https://github.com/sjain882/Blue-Sky-Tool-OMSI_DarkTheme/Previews/2.png?raw=true" width="60%" height="60%"/>
+
 ## Download
 
 Download this program from our website: [cdlbt.co/bluesky](https://cdlbt.co/bluesky/)
