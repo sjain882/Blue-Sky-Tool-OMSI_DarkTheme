@@ -22,7 +22,9 @@ Preview:
 
 ## Download
 
-Download this program from our website: [cdlbt.co/bluesky](https://cdlbt.co/bluesky/)
+Download this dark theme version: https://github.com/sjain882/Blue-Sky-Tool-OMSI_DarkTheme/releases/latest
+
+Download original program: [cdlbt.co/bluesky](https://cdlbt.co/bluesky/)
 
 ## How to scan for missing files
 
