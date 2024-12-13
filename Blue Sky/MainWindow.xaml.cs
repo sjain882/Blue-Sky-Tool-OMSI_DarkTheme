@@ -22,12 +22,22 @@ namespace Blue_Sky
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        MapLoadScreen mapLoadScreen;
+        ThemeChanger themeChanger2;
+
+
         public MainWindow()
         {
 
             // Setup theme detection
             ThemeChanger themeChanger = new ThemeChanger(this);
             themeChanger.ChangeTheme();
+
+            // And for loading
+            mapLoadScreen = new MapLoadScreen();
+            themeChanger2 = new ThemeChanger(mapLoadScreen);
+            themeChanger2.ChangeTheme();
 
             InitializeComponent();
         }
@@ -101,14 +111,16 @@ namespace Blue_Sky
                 txtMapDir.Text = pickMapFile.FileName;
 
                 // Show map load screen
-                MapLoadScreen m = new MapLoadScreen();
-                m.Show();
+                mapLoadScreen = new MapLoadScreen();
+                themeChanger2 = new ThemeChanger(mapLoadScreen);
+                themeChanger2.ChangeTheme();
+                mapLoadScreen.Show();
 
                 Task task = Task.Factory.StartNew(() =>
                 {
                     this.Dispatcher.Invoke((Action)(() =>
                     {
-                        m.lblLoading.Content = "Reading global.cfg...";
+                        mapLoadScreen.lblLoading.Content = "Reading global.cfg...";
                         BlueSkyWindow.IsEnabled = false;
                     }));
 
@@ -180,7 +192,7 @@ namespace Blue_Sky
                     // Set progress bar to 10 after finish reading for tiles
                     this.Dispatcher.Invoke((Action)(() =>
                     {
-                        m.pbrLoading.Value = 10;
+                        mapLoadScreen.pbrLoading.Value = 10;
                     }));
 
                     // Scan tiles for objects and splines
@@ -188,8 +200,8 @@ namespace Blue_Sky
                     {
                         this.Dispatcher.Invoke((Action)(() =>
                         {
-                            m.lblLoading.Content = "Reading tiles (" + (t + 1) + "/" + tiles.Count + ")...";
-                            m.pbrLoading.Value = 10 + (double)t / (double)tiles.Count * 80d;
+                            mapLoadScreen.lblLoading.Content = "Reading tiles (" + (t + 1) + "/" + tiles.Count + ")...";
+                            mapLoadScreen.pbrLoading.Value = 10 + (double)t / (double)tiles.Count * 80d;
                         }));
 
                         if (File.Exists(Directory.GetParent(pickMapFile.FileName) + "\\" + tiles[t]))
@@ -229,8 +241,8 @@ namespace Blue_Sky
                     // Set progress bar to 90 after finish reading for objects and splines, then set to start reading ai list
                     this.Dispatcher.Invoke((Action)(() =>
                     {
-                        m.lblLoading.Content = "Reading ailist.txt...";
-                        m.pbrLoading.Value = 90;
+                        mapLoadScreen.lblLoading.Content = "Reading ailist.txt...";
+                        mapLoadScreen.pbrLoading.Value = 90;
                     }));
 
                     // Scan ai list
@@ -281,8 +293,8 @@ namespace Blue_Sky
                     // Set progress bar to 95 after reading ai list, then set start read parklist
                     this.Dispatcher.Invoke((Action)(() =>
                     {
-                        m.lblLoading.Content = "Reading parklist_p.txt...";
-                        m.pbrLoading.Value = 95;
+                        mapLoadScreen.lblLoading.Content = "Reading parklist_p.txt...";
+                        mapLoadScreen.pbrLoading.Value = 95;
                     }));
 
                     // Scan park list
@@ -307,8 +319,8 @@ namespace Blue_Sky
                     // Set progress bar to 98 after finish reading parklist, then set to start reading human
                     this.Dispatcher.Invoke((Action)(() =>
                     {
-                        m.lblLoading.Content = "Reading humans.txt...";
-                        m.pbrLoading.Value = 98;
+                        mapLoadScreen.lblLoading.Content = "Reading humans.txt...";
+                        mapLoadScreen.pbrLoading.Value = 98;
                     }));
 
                     // Scan humans
@@ -348,8 +360,8 @@ namespace Blue_Sky
                     // Set progress bar to 100 after finish reading human, then set to collecting data
                     this.Dispatcher.Invoke((Action)(() =>
                     {
-                        m.lblLoading.Content = "Collecting Data...";
-                        m.pbrLoading.Value = 100;
+                        mapLoadScreen.lblLoading.Content = "Collecting Data...";
+                        mapLoadScreen.pbrLoading.Value = 100;
                     }));
 
                     // Sort data and output to textboxes
@@ -471,7 +483,7 @@ namespace Blue_Sky
 
                         // Re-enable main window and close loading screen
                         BlueSkyWindow.IsEnabled = true;
-                        m.Close();
+                        mapLoadScreen.Close();
                     }));
                 });
             }
