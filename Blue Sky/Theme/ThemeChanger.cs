@@ -36,16 +36,16 @@ namespace Blue_Sky
             {
                 // Contains all of the colours and brushes for a theme
                 ResourceDictionary DarkThemeColourDict = new ResourceDictionary()
-                { Source = new Uri("GUI/Theme/WPFDarkTheme/ColourDictionaries/DarkGreyTheme-Modified.xaml", UriKind.Relative) };
+                { Source = new Uri("Theme/WPFDarkTheme/ColourDictionaries/DarkGreyTheme-Modified.xaml", UriKind.Relative) };
 
                 // Contains most of the control-specific brushes which reference
                 // the above theme. I aim for this to contain ALL brushes, not most
                 ResourceDictionary DarkThemeControlColours = new ResourceDictionary()
-                { Source = new Uri("GUI/Theme/WPFDarkTheme/ControlColours.xaml", UriKind.Relative) };
+                { Source = new Uri("Theme/WPFDarkTheme/ControlColours.xaml", UriKind.Relative) };
 
                 // Contains all of the control styles(Button, ListBox, etc)
                 ResourceDictionary DarkThemeControlStyles = new ResourceDictionary()
-                { Source = new Uri("GUI/Theme/WPFDarkTheme/Controls.xaml", UriKind.Relative) };
+                { Source = new Uri("Theme/WPFDarkTheme/Controls.xaml", UriKind.Relative) };
 
                 App.Current.Resources.Clear();
                 Window.Resources.Clear();
@@ -63,7 +63,7 @@ namespace Blue_Sky
             else
             {
                 ResourceDictionary DefaultStyle = new ResourceDictionary()
-                { Source = new Uri("GUI/Theme/WPFDefault/aero2.normalcolor.xaml", UriKind.Relative) };
+                { Source = new Uri("Theme/WPFDefault/aero2.normalcolor.xaml", UriKind.Relative) };
 
                 Window.Style = null;
                 App.Current.Resources.Clear();

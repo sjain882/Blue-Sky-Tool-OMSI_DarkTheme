@@ -24,6 +24,11 @@ namespace Blue_Sky
     {
         public MainWindow()
         {
+
+            // Setup theme detection
+            ThemeChanger themeChanger = new ThemeChanger(this);
+            themeChanger.ChangeTheme();
+
             InitializeComponent();
         }
 

@@ -1,273 +1,603 @@
-﻿<Window x:Class="Blue_Sky.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Blue_Sky"
-        mc:Ignorable="d"
-        Title="Blue Sky Tool" Height="728" Width="1024" Background="#FFE5E5E5" x:Name="BlueSkyWindow" WindowStartupLocation="CenterScreen">
+﻿<Window
+    x:Class="Blue_Sky.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Blue_Sky"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="BlueSkyWindow"
+    Title="Blue Sky Tool"
+    Width="1024"
+    Height="728"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+
+    <!--<Window.Background>
+        <StaticResource ResourceKey="BSkyBG" />
+    </Window.Background>-->
+
+
+
+    <!--  Light BG : Background="#FFE5E5E5"  -->
+
     <Grid Margin="4">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="103*"/>
-            <ColumnDefinition Width="905*"/>
+            <ColumnDefinition Width="103*" />
+            <ColumnDefinition Width="905*" />
         </Grid.ColumnDefinitions>
-        <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="4" Grid.ColumnSpan="2">
-            <TabItem Header="Map Information" Padding="8,4">
-                <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="4">
+        <TabControl
+            Grid.ColumnSpan="2"
+            Margin="4"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch">
+            <TabItem Padding="8,4" Header="Map Information">
+                <Grid
+                    Margin="4"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="34"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="34" />
+                        <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Row="0">
-                        <Button Margin="4" Padding="8,4" Content="Open map..." Click="btnMap_Click"/>
-                        <TextBox Margin="4" Padding="4" TextWrapping="NoWrap" IsReadOnly="True" x:Name="txtMapDir"/>
+                    <DockPanel
+                        Grid.Row="0"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Top">
+                        <Button
+                            Margin="4"
+                            Padding="8,4"
+                            Click="btnMap_Click"
+                            Content="Open map..." />
+                        <TextBox
+                            x:Name="txtMapDir"
+                            Margin="4"
+                            Padding="4"
+                            IsReadOnly="True"
+                            TextWrapping="NoWrap" />
                     </DockPanel>
-                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1">
+                    <Grid
+                        Grid.Row="1"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
                         </Grid.ColumnDefinitions>
-                        <Grid Margin="4" Grid.Column="0">
+                        <Grid Grid.Column="0" Margin="4">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="336"/>
-                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="336" />
+                                <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <StackPanel Grid.Row="0">
-                                <Label Margin="4,4,4,0" Padding="0,4" Content="Map Name"/>
-                                <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="NoWrap" IsReadOnly="True" x:Name="txtMapName"/>
+                                <Label
+                                    Margin="4,4,4,0"
+                                    Padding="0,4"
+                                    Content="Map Name" />
+                                <TextBox
+                                    x:Name="txtMapName"
+                                    Margin="4,0,4,4"
+                                    Padding="4"
+                                    IsReadOnly="True"
+                                    TextWrapping="NoWrap" />
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
                                     <StackPanel Grid.Column="0">
-                                        <Label Margin="4,4,4,0" Padding="0,4" Content="Total Tiles"/>
-                                        <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="NoWrap" IsReadOnly="True" x:Name="txtMapTileCount"/>
+                                        <Label
+                                            Margin="4,4,4,0"
+                                            Padding="0,4"
+                                            Content="Total Tiles" />
+                                        <TextBox
+                                            x:Name="txtMapTileCount"
+                                            Margin="4,0,4,4"
+                                            Padding="4"
+                                            IsReadOnly="True"
+                                            TextWrapping="NoWrap" />
                                     </StackPanel>
                                     <StackPanel Grid.Column="1">
-                                        <Label Margin="4,4,4,0" Padding="0,4" Content="Tiles Missing"/>
-                                        <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="NoWrap" IsReadOnly="True" x:Name="txtMapTileMissing"/>
+                                        <Label
+                                            Margin="4,4,4,0"
+                                            Padding="0,4"
+                                            Content="Tiles Missing" />
+                                        <TextBox
+                                            x:Name="txtMapTileMissing"
+                                            Margin="4,0,4,4"
+                                            Padding="4"
+                                            IsReadOnly="True"
+                                            TextWrapping="NoWrap" />
                                     </StackPanel>
                                 </Grid>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
                                     <StackPanel Grid.Column="0">
-                                        <Label Margin="4,4,4,0" Padding="0,4" Content="Total Objects"/>
-                                        <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="NoWrap" IsReadOnly="True" x:Name="txtMapObjectCount"/>
+                                        <Label
+                                            Margin="4,4,4,0"
+                                            Padding="0,4"
+                                            Content="Total Objects" />
+                                        <TextBox
+                                            x:Name="txtMapObjectCount"
+                                            Margin="4,0,4,4"
+                                            Padding="4"
+                                            IsReadOnly="True"
+                                            TextWrapping="NoWrap" />
                                     </StackPanel>
                                     <StackPanel Grid.Column="1">
-                                        <Label Margin="4,4,4,0" Padding="0,4" Content="Missing Objects"/>
-                                        <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="NoWrap" IsReadOnly="True" x:Name="txtMapObjectMissing"/>
+                                        <Label
+                                            Margin="4,4,4,0"
+                                            Padding="0,4"
+                                            Content="Missing Objects" />
+                                        <TextBox
+                                            x:Name="txtMapObjectMissing"
+                                            Margin="4,0,4,4"
+                                            Padding="4"
+                                            IsReadOnly="True"
+                                            TextWrapping="NoWrap" />
                                     </StackPanel>
                                 </Grid>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
                                     <StackPanel Grid.Column="0">
-                                        <Label Margin="4,4,4,0" Padding="0,4" Content="Total Splines"/>
-                                        <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="NoWrap" IsReadOnly="True" x:Name="txtMapSplineCount"/>
+                                        <Label
+                                            Margin="4,4,4,0"
+                                            Padding="0,4"
+                                            Content="Total Splines" />
+                                        <TextBox
+                                            x:Name="txtMapSplineCount"
+                                            Margin="4,0,4,4"
+                                            Padding="4"
+                                            IsReadOnly="True"
+                                            TextWrapping="NoWrap" />
                                     </StackPanel>
                                     <StackPanel Grid.Column="1">
-                                        <Label Margin="4,4,4,0" Padding="0,4" Content="Missing Splines"/>
-                                        <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="NoWrap" IsReadOnly="True" x:Name="txtMapSplineMissing"/>
+                                        <Label
+                                            Margin="4,4,4,0"
+                                            Padding="0,4"
+                                            Content="Missing Splines" />
+                                        <TextBox
+                                            x:Name="txtMapSplineMissing"
+                                            Margin="4,0,4,4"
+                                            Padding="4"
+                                            IsReadOnly="True"
+                                            TextWrapping="NoWrap" />
                                     </StackPanel>
                                 </Grid>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
                                     <StackPanel Grid.Column="0">
-                                        <Label Margin="4,4,4,0" Padding="0,4" Content="Total AI Vehicles"/>
-                                        <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="NoWrap" IsReadOnly="True" x:Name="txtMapAicarCount"/>
+                                        <Label
+                                            Margin="4,4,4,0"
+                                            Padding="0,4"
+                                            Content="Total AI Vehicles" />
+                                        <TextBox
+                                            x:Name="txtMapAicarCount"
+                                            Margin="4,0,4,4"
+                                            Padding="4"
+                                            IsReadOnly="True"
+                                            TextWrapping="NoWrap" />
                                     </StackPanel>
                                     <StackPanel Grid.Column="1">
-                                        <Label Margin="4,4,4,0" Padding="0,4" Content="Missing AI Vehicles"/>
-                                        <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="NoWrap" IsReadOnly="True" x:Name="txtMapAicarMissing"/>
+                                        <Label
+                                            Margin="4,4,4,0"
+                                            Padding="0,4"
+                                            Content="Missing AI Vehicles" />
+                                        <TextBox
+                                            x:Name="txtMapAicarMissing"
+                                            Margin="4,0,4,4"
+                                            Padding="4"
+                                            IsReadOnly="True"
+                                            TextWrapping="NoWrap" />
                                     </StackPanel>
                                 </Grid>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
                                     <StackPanel Grid.Column="0">
-                                        <Label Margin="4,4,4,0" Padding="0,4" Content="Total Humans"/>
-                                        <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="NoWrap" IsReadOnly="True" x:Name="txtMapHumanCount"/>
+                                        <Label
+                                            Margin="4,4,4,0"
+                                            Padding="0,4"
+                                            Content="Total Humans" />
+                                        <TextBox
+                                            x:Name="txtMapHumanCount"
+                                            Margin="4,0,4,4"
+                                            Padding="4"
+                                            IsReadOnly="True"
+                                            TextWrapping="NoWrap" />
                                     </StackPanel>
                                     <StackPanel Grid.Column="1">
-                                        <Label Margin="4,4,4,0" Padding="0,4" Content="Missing Humans"/>
-                                        <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="NoWrap" IsReadOnly="True" x:Name="txtMapHumanMissing"/>
+                                        <Label
+                                            Margin="4,4,4,0"
+                                            Padding="0,4"
+                                            Content="Missing Humans" />
+                                        <TextBox
+                                            x:Name="txtMapHumanMissing"
+                                            Margin="4,0,4,4"
+                                            Padding="4"
+                                            IsReadOnly="True"
+                                            TextWrapping="NoWrap" />
                                     </StackPanel>
                                 </Grid>
                             </StackPanel>
-                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1">
+                            <Grid
+                                Grid.Row="1"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="30"/>
-                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="30" />
+                                    <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
-                                <Label Margin="4,4,4,0" Padding="0,4" Grid.Row="0" Content="Map Description"/>
-                                <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="Wrap" IsReadOnly="True" Grid.Row="1" x:Name="txtMapDescription"/>
+                                <Label
+                                    Grid.Row="0"
+                                    Margin="4,4,4,0"
+                                    Padding="0,4"
+                                    Content="Map Description" />
+                                <TextBox
+                                    x:Name="txtMapDescription"
+                                    Grid.Row="1"
+                                    Margin="4,0,4,4"
+                                    Padding="4"
+                                    IsReadOnly="True"
+                                    TextWrapping="Wrap" />
                             </Grid>
                         </Grid>
-                        <Image VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="4" Grid.Column="1" x:Name="imgMap"/>
+                        <Image
+                            x:Name="imgMap"
+                            Grid.Column="1"
+                            Margin="4"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch" />
                     </Grid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Tiles" Padding="8,4" x:Name="tabTiles">
+            <TabItem
+                x:Name="tabTiles"
+                Padding="8,4"
+                Header="Tiles">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Grid Margin="4" Grid.Column="0">
+                    <Grid Grid.Column="0" Margin="4">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <Label Margin="4,0" VerticalAlignment="Bottom" Grid.Row="0" Content="All tiles:"/>
-                        <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Grid.Row="1" FontFamily="Courier New" IsReadOnly="True" x:Name="txtTilesList"/>
+                        <Label
+                            Grid.Row="0"
+                            Margin="4,0"
+                            VerticalAlignment="Bottom"
+                            Content="All tiles:" />
+                        <TextBox
+                            x:Name="txtTilesList"
+                            Grid.Row="1"
+                            Margin="4,0,4,4"
+                            Padding="4"
+                            FontFamily="Courier New"
+                            IsReadOnly="True"
+                            TextWrapping="Wrap"
+                            VerticalScrollBarVisibility="Auto" />
                     </Grid>
-                    <Grid Margin="4" Grid.Column="1">
+                    <Grid Grid.Column="1" Margin="4">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <Label Margin="4,0" VerticalAlignment="Bottom" Grid.Row="0" Content="Missing tiles:"/>
-                        <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Grid.Row="1" FontFamily="Courier New" IsReadOnly="True" x:Name="txtTilesMissingList"/>
+                        <Label
+                            Grid.Row="0"
+                            Margin="4,0"
+                            VerticalAlignment="Bottom"
+                            Content="Missing tiles:" />
+                        <TextBox
+                            x:Name="txtTilesMissingList"
+                            Grid.Row="1"
+                            Margin="4,0,4,4"
+                            Padding="4"
+                            FontFamily="Courier New"
+                            IsReadOnly="True"
+                            TextWrapping="Wrap"
+                            VerticalScrollBarVisibility="Auto" />
                     </Grid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Objects" Padding="8,4" x:Name="tabObjects">
+            <TabItem
+                x:Name="tabObjects"
+                Padding="8,4"
+                Header="Objects">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Grid Margin="4" Grid.Column="0">
+                    <Grid Grid.Column="0" Margin="4">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <Label Margin="4,0" VerticalAlignment="Bottom" Grid.Row="0" Content="All objects:"/>
-                        <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Grid.Row="1" FontFamily="Courier New" IsReadOnly="True" x:Name="txtObjectsList"/>
+                        <Label
+                            Grid.Row="0"
+                            Margin="4,0"
+                            VerticalAlignment="Bottom"
+                            Content="All objects:" />
+                        <TextBox
+                            x:Name="txtObjectsList"
+                            Grid.Row="1"
+                            Margin="4,0,4,4"
+                            Padding="4"
+                            FontFamily="Courier New"
+                            IsReadOnly="True"
+                            TextWrapping="Wrap"
+                            VerticalScrollBarVisibility="Auto" />
                     </Grid>
-                    <Grid Margin="4" Grid.Column="1">
+                    <Grid Grid.Column="1" Margin="4">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <Label Margin="4,0" VerticalAlignment="Bottom" Grid.Row="0" Content="Missing objects:"/>
-                        <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Grid.Row="1" FontFamily="Courier New" IsReadOnly="True" x:Name="txtObjectsMissingList"/>
+                        <Label
+                            Grid.Row="0"
+                            Margin="4,0"
+                            VerticalAlignment="Bottom"
+                            Content="Missing objects:" />
+                        <TextBox
+                            x:Name="txtObjectsMissingList"
+                            Grid.Row="1"
+                            Margin="4,0,4,4"
+                            Padding="4"
+                            FontFamily="Courier New"
+                            IsReadOnly="True"
+                            TextWrapping="Wrap"
+                            VerticalScrollBarVisibility="Auto" />
                     </Grid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Splines" Padding="8,4" x:Name="tabSplines">
+            <TabItem
+                x:Name="tabSplines"
+                Padding="8,4"
+                Header="Splines">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Grid Margin="4"  Grid.Column="0">
+                    <Grid Grid.Column="0" Margin="4">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <Label Margin="4,0" VerticalAlignment="Bottom" Grid.Row="0" Content="All splines:"/>
-                        <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Grid.Row="1" FontFamily="Courier New" IsReadOnly="True" x:Name="txtSplinesList"/>
+                        <Label
+                            Grid.Row="0"
+                            Margin="4,0"
+                            VerticalAlignment="Bottom"
+                            Content="All splines:" />
+                        <TextBox
+                            x:Name="txtSplinesList"
+                            Grid.Row="1"
+                            Margin="4,0,4,4"
+                            Padding="4"
+                            FontFamily="Courier New"
+                            IsReadOnly="True"
+                            TextWrapping="Wrap"
+                            VerticalScrollBarVisibility="Auto" />
                     </Grid>
-                    <Grid Margin="4" Grid.Column="1">
+                    <Grid Grid.Column="1" Margin="4">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <Label Margin="4,0" VerticalAlignment="Bottom" Grid.Row="0" Content="Missing splines:"/>
-                        <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Grid.Row="1" FontFamily="Courier New" IsReadOnly="True" x:Name="txtSplinesMissingList"/>
+                        <Label
+                            Grid.Row="0"
+                            Margin="4,0"
+                            VerticalAlignment="Bottom"
+                            Content="Missing splines:" />
+                        <TextBox
+                            x:Name="txtSplinesMissingList"
+                            Grid.Row="1"
+                            Margin="4,0,4,4"
+                            Padding="4"
+                            FontFamily="Courier New"
+                            IsReadOnly="True"
+                            TextWrapping="Wrap"
+                            VerticalScrollBarVisibility="Auto" />
                     </Grid>
                 </Grid>
             </TabItem>
-            <TabItem Header="AI Vehicles" Padding="8,4" x:Name="tabAicar">
+            <TabItem
+                x:Name="tabAicar"
+                Padding="8,4"
+                Header="AI Vehicles">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Grid Margin="4"  Grid.Column="0">
+                    <Grid Grid.Column="0" Margin="4">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <Label Margin="4,0" VerticalAlignment="Bottom" Grid.Row="0" Content="All AI vehicles:"/>
-                        <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Grid.Row="1" FontFamily="Courier New" IsReadOnly="True" x:Name="txtAicarsList"/>
+                        <Label
+                            Grid.Row="0"
+                            Margin="4,0"
+                            VerticalAlignment="Bottom"
+                            Content="All AI vehicles:" />
+                        <TextBox
+                            x:Name="txtAicarsList"
+                            Grid.Row="1"
+                            Margin="4,0,4,4"
+                            Padding="4"
+                            FontFamily="Courier New"
+                            IsReadOnly="True"
+                            TextWrapping="Wrap"
+                            VerticalScrollBarVisibility="Auto" />
                     </Grid>
-                    <Grid Margin="4" Grid.Column="1">
+                    <Grid Grid.Column="1" Margin="4">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <Label Margin="4,0" VerticalAlignment="Bottom" Grid.Row="0" Content="Missing AI vehicles:"/>
-                        <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Grid.Row="1" FontFamily="Courier New" IsReadOnly="True" x:Name="txtAicarsMissingList"/>
+                        <Label
+                            Grid.Row="0"
+                            Margin="4,0"
+                            VerticalAlignment="Bottom"
+                            Content="Missing AI vehicles:" />
+                        <TextBox
+                            x:Name="txtAicarsMissingList"
+                            Grid.Row="1"
+                            Margin="4,0,4,4"
+                            Padding="4"
+                            FontFamily="Courier New"
+                            IsReadOnly="True"
+                            TextWrapping="Wrap"
+                            VerticalScrollBarVisibility="Auto" />
                     </Grid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Humans" Padding="8,4" x:Name="tabHuman">
+            <TabItem
+                x:Name="tabHuman"
+                Padding="8,4"
+                Header="Humans">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Grid Margin="4"  Grid.Column="0">
+                    <Grid Grid.Column="0" Margin="4">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <Label Margin="4,0" VerticalAlignment="Bottom" Grid.Row="0" Content="All humans:"/>
-                        <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Grid.Row="1" FontFamily="Courier New" IsReadOnly="True" x:Name="txtHumansList"/>
+                        <Label
+                            Grid.Row="0"
+                            Margin="4,0"
+                            VerticalAlignment="Bottom"
+                            Content="All humans:" />
+                        <TextBox
+                            x:Name="txtHumansList"
+                            Grid.Row="1"
+                            Margin="4,0,4,4"
+                            Padding="4"
+                            FontFamily="Courier New"
+                            IsReadOnly="True"
+                            TextWrapping="Wrap"
+                            VerticalScrollBarVisibility="Auto" />
                     </Grid>
-                    <Grid Margin="4" Grid.Column="1">
+                    <Grid Grid.Column="1" Margin="4">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <Label Margin="4,0" VerticalAlignment="Bottom" Grid.Row="0" Content="Missing humans:"/>
-                        <TextBox Margin="4,0,4,4" Padding="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Grid.Row="1" FontFamily="Courier New" IsReadOnly="True" x:Name="txtHumansMissingList"/>
+                        <Label
+                            Grid.Row="0"
+                            Margin="4,0"
+                            VerticalAlignment="Bottom"
+                            Content="Missing humans:" />
+                        <TextBox
+                            x:Name="txtHumansMissingList"
+                            Grid.Row="1"
+                            Margin="4,0,4,4"
+                            Padding="4"
+                            FontFamily="Courier New"
+                            IsReadOnly="True"
+                            TextWrapping="Wrap"
+                            VerticalScrollBarVisibility="Auto" />
                     </Grid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Logfile" Padding="8,4">
-                <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Margin="4">
+            <TabItem Padding="8,4" Header="Logfile">
+                <Grid
+                    Margin="4"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="34px"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="34px" />
+                        <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Row="0">
-                        <Button Content="Open log file..." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4" Padding="8,4" Click="btnLogFile_Click"/>
-                        <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="4" Padding="4" TextWrapping="NoWrap" IsReadOnly="True" x:Name="txtLogFileDir"/>
+                    <DockPanel
+                        Grid.Row="0"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Top">
+                        <Button
+                            Margin="4"
+                            Padding="8,4"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Click="btnLogFile_Click"
+                            Content="Open log file..." />
+                        <TextBox
+                            x:Name="txtLogFileDir"
+                            Margin="4"
+                            Padding="4"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Top"
+                            IsReadOnly="True"
+                            TextWrapping="NoWrap" />
                     </DockPanel>
-                    <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Margin="4">
-                        <TabItem Header="Information" Padding="8,4">
-                            <TextBox Padding="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" FontFamily="Courier New" IsReadOnly="True" x:Name="txtLogFileInfo"/>
+                    <TabControl
+                        Grid.Row="1"
+                        Margin="4"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch">
+                        <TabItem Padding="8,4" Header="Information">
+                            <TextBox
+                                x:Name="txtLogFileInfo"
+                                Padding="4"
+                                FontFamily="Courier New"
+                                IsReadOnly="True"
+                                TextWrapping="Wrap"
+                                VerticalScrollBarVisibility="Auto" />
                         </TabItem>
-                        <TabItem Header="Warnings" Padding="8,4" x:Name="tabLogFileWarn">
-                            <TextBox Padding="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" FontFamily="Courier New" IsReadOnly="True" x:Name="txtLogFileWarn"/>
+                        <TabItem
+                            x:Name="tabLogFileWarn"
+                            Padding="8,4"
+                            Header="Warnings">
+                            <TextBox
+                                x:Name="txtLogFileWarn"
+                                Padding="4"
+                                FontFamily="Courier New"
+                                IsReadOnly="True"
+                                TextWrapping="Wrap"
+                                VerticalScrollBarVisibility="Auto" />
                         </TabItem>
-                        <TabItem Header="Errors" Padding="8,4" x:Name="tabLogFileError">
-                            <TextBox Padding="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" FontFamily="Courier New" IsReadOnly="True" x:Name="txtLogFileError"/>
+                        <TabItem
+                            x:Name="tabLogFileError"
+                            Padding="8,4"
+                            Header="Errors">
+                            <TextBox
+                                x:Name="txtLogFileError"
+                                Padding="4"
+                                FontFamily="Courier New"
+                                IsReadOnly="True"
+                                TextWrapping="Wrap"
+                                VerticalScrollBarVisibility="Auto" />
                         </TabItem>
                     </TabControl>
 
                 </Grid>
             </TabItem>
-            <TabItem Header="About" Padding="8,4">
+            <TabItem Padding="8,4" Header="About">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Label Content="Blue Sky Tool" HorizontalAlignment="Center" FontSize="16"/>
-                    <Label Content="Release v1" HorizontalAlignment="Center" FontSize="10"/>
-                    <Label Content="© 2020 cdlbt.co All rights reserved." HorizontalAlignment="Center"/>
+                    <Label
+                        HorizontalAlignment="Center"
+                        Content="Blue Sky Tool"
+                        FontSize="16" />
+                    <Label
+                        HorizontalAlignment="Center"
+                        Content="Release v1"
+                        FontSize="10" />
+                    <Label HorizontalAlignment="Center" Content="© 2020 cdlbt.co All rights reserved." />
                 </StackPanel>
             </TabItem>
         </TabControl>

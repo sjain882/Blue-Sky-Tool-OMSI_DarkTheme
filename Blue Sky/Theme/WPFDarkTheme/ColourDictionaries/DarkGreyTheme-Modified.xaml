@@ -16,21 +16,22 @@
     <Color x:Key="AColour.ColourfulGlyph.Selected"             R="50"  G="115" B="185" A="255" />
     <Color x:Key="AColour.ColourfulGlyph.Selected.Inactive"    R="55"  G="120" B="200" A="255" />
 
-    <Color x:Key="AColour.AccentTone1.Background.Static"       R="85" G="135" B="175" A="255" />
+    <Color x:Key="AColour.AccentTone1.Background.Static"       R="41"  G="41"  B="41"  A="255" />
     <Color x:Key="AColour.AccentTone1.Border.Static"           R="65" G="130" B="205" A="255" />
-    <Color x:Key="AColour.AccentTone2.Background.Static"       R="52" G="148" B="225" A="255" />
+    <Color x:Key="AColour.AccentTone2.Background.Static"       R="41"  G="41"  B="41"  A="255" />
     <Color x:Key="AColour.AccentTone2.Border.Static"           R="47" G="130" B="200" A="255" />
-    <Color x:Key="AColour.AccentTone3.Background.Static"       R="45" G="125" B="215" A="255" />
+    <Color x:Key="AColour.AccentTone3.Background.Static"       R="41"  G="41"  B="41"  A="255" />
     <Color x:Key="AColour.AccentTone3.Border.Static"           R="50" G="135" B="200" A="255" />
 
-    <Color x:Key="AColour.Tone1.Background.Static"             R="40"  G="40"  B="40"  A="255" />
+    <Color x:Key="AColour.Tone1.Background.Static"            R="41"  G="41"  B="41"  A="255" />
     <Color x:Key="AColour.Tone1.Border.Static"                 R="54"  G="54"  B="54"  A="255" />
-    <Color x:Key="AColour.Tone2.Background.Static"             R="44"  G="44"  B="44"  A="255" />
+    <Color x:Key="AColour.Tone2.Background.Static"             R="41"  G="41"  B="41"  A="255" />
     <Color x:Key="AColour.Tone2.Border.Static"                 R="58"  G="58"  B="58"  A="255" />
-    <Color x:Key="AColour.Tone3.Background.Static"             R="41"  G="41"  B="41"  A="255" />
+    <!-- THIS IS MAIN WINDOW BG -->
+    <Color x:Key="AColour.Tone3.Background.Static"             R="49"  G="49"  B="49"  A="255" />
     <Color x:Key="AColour.Tone3.Border.Static"                 R="73"  G="73"  B="73"  A="255" />
 
-    <Color x:Key="AColour.Tone4.Background.Static"             R="52"  G="52"  B="52" A="255" />
+    <Color x:Key="AColour.Tone4.Background.Static"            R="41"  G="41"  B="41"  A="255" />
     <Color x:Key="AColour.Tone4.Border.Static"                 R="63"  G="63"  B="63" A="255" />
     <Color x:Key="AColour.Tone4.Background.MouseOver"          R="74"  G="74"  B="74" A="255" />
     <Color x:Key="AColour.Tone4.Border.MouseOver"              R="84"  G="84"  B="84" A="255" />
@@ -43,7 +44,7 @@
     <Color x:Key="AColour.Tone4.Background.Disabled"           R="98"  G="98"  B="98" A="255" />
     <Color x:Key="AColour.Tone4.Border.Disabled"               R="108" G="108" B="108" A="255" />
 
-    <Color x:Key="AColour.Tone5.Background.Static"             R="58"  G="58"  B="58" A="255" />
+    <Color x:Key="AColour.Tone5.Background.Static"             R="41"  G="41"  B="41"  A="255" />
     <Color x:Key="AColour.Tone5.Border.Static"                 R="71"  G="71"  B="71" A="255" />
     <Color x:Key="AColour.Tone5.Background.MouseOver"          R="84"  G="84"  B="84" A="255" />
     <Color x:Key="AColour.Tone5.Border.MouseOver"              R="94"  G="94"  B="94" A="255" />
@@ -56,7 +57,7 @@
     <Color x:Key="AColour.Tone5.Background.Disabled"           R="111" G="111" B="111" A="255" />
     <Color x:Key="AColour.Tone5.Border.Disabled"               R="123" G="123" B="123" A="255" />
 
-    <Color x:Key="AColour.Tone6.Background.Static"             R="65"  G="65"  B="65" A="255" />
+    <Color x:Key="AColour.Tone6.Background.Static"             R="41"  G="41"  B="41"  A="255" />
     <Color x:Key="AColour.Tone6.Border.Static"                 R="79"  G="79"  B="79" A="255" />
     <Color x:Key="AColour.Tone6.Background.MouseOver"          R="92"  G="92"  B="92" A="255" />
     <Color x:Key="AColour.Tone6.Border.MouseOver"              R="112" G="112" B="112" A="255" />
@@ -69,7 +70,7 @@
     <Color x:Key="AColour.Tone6.Background.Disabled"           R="141" G="141" B="141" A="255" />
     <Color x:Key="AColour.Tone6.Border.Disabled"               R="158" G="158" B="158" A="255" />
 
-    <Color x:Key="AColour.Tone7.Background.Static"             R="84"  G="84"  B="84" A="255" />
+    <Color x:Key="AColour.Tone7.Background.Static"             R="41"  G="41"  B="41"  A="255" />
     <Color x:Key="AColour.Tone7.Border.Static"                 R="100" G="100" B="100" A="255" />
     <Color x:Key="AColour.Tone7.Background.MouseOver"          R="114" G="114" B="114" A="255" />
     <Color x:Key="AColour.Tone7.Border.MouseOver"              R="124" G="124" B="124" A="255" />
@@ -82,7 +83,7 @@
     <Color x:Key="AColour.Tone7.Background.Disabled"           R="140" G="140" B="140" A="255" />
     <Color x:Key="AColour.Tone7.Border.Disabled"               R="155" G="155" B="155" A="255" />
 
-    <Color x:Key="AColour.Tone8.Background.Static"             R="98" G="98" B="98" A="255" />
+    <Color x:Key="AColour.Tone8.Background.Static"             R="41"  G="41"  B="41"  A="255" />
     <Color x:Key="AColour.Tone8.Border.Static"                 R="125" G="125" B="125" A="255" />
     <Color x:Key="AColour.Tone8.Background.MouseOver"          R="125" G="125" B="125" A="255" />
     <Color x:Key="AColour.Tone8.Border.MouseOver"              R="140" G="140" B="140" A="255" />
