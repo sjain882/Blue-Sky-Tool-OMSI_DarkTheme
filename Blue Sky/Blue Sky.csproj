@@ -10,6 +10,9 @@
   <PropertyGroup>
     <ApplicationIcon>bluesky.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants);/debug:none</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
     <Resource Include="bluesky.ico" />
   </ItemGroup>

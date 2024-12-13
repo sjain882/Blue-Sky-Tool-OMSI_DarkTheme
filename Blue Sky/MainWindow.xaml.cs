@@ -532,5 +532,15 @@ namespace Blue_Sky
             txtLogFileWarn.Clear();
             txtLogFileError.Clear();
         }
+
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+
+            Application.Current.Shutdown();
+        }
+
+
     }
 }
