@@ -11,7 +11,10 @@
     <ApplicationIcon>bluesky.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>$(DefineConstants);/debug:none</DefineConstants>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>none</DebugType>
   </PropertyGroup>
   <ItemGroup>
     <Resource Include="bluesky.ico" />
