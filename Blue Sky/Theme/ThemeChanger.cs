@@ -69,6 +69,10 @@ namespace Blue_Sky
                 App.Current.Resources.Clear();
                 Window.Resources.Clear();
                 App.Current.Resources.MergedDictionaries.Add(DefaultStyle);
+                if (Window.GetType() == typeof(MainWindow))
+                {
+                    Window.Style = (Style)Window.FindResource("CustomWindowStyle");
+                }
                 RefreshControls();
 
                 currentAppThemeIsDark = false;

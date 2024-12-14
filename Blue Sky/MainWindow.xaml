@@ -12,12 +12,6 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
 
-    <!--<Window.Background>
-        <StaticResource ResourceKey="BSkyBG" />
-    </Window.Background>-->
-
-
-
     <!--  Light BG : Background="#FFE5E5E5"  -->
 
     <Grid Margin="4">

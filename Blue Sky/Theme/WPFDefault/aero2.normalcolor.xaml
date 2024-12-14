@@ -13,6 +13,10 @@
     xmlns:ui="clr-namespace:System.Windows.Documents;assembly=PresentationUI">
 
 
+    <Style x:Key="CustomWindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="Background" Value="#FFE5E5E5" />
+    </Style>
+
     <SolidColorBrush
         x:Key="BSkyBG"
         x:Name="BSkyBG"
