@@ -114,6 +114,8 @@ namespace Blue_Sky
                 mapLoadScreen = new MapLoadScreen();
                 themeChanger2 = new ThemeChanger(mapLoadScreen);
                 themeChanger2.ChangeTheme();
+
+                mapLoadScreen.Topmost = true;
                 mapLoadScreen.Show();
 
                 Task task = Task.Factory.StartNew(() =>
