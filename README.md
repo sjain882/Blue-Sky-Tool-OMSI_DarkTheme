@@ -30,9 +30,9 @@ Automatically changes light/dark theme while running.
 
 Preview:
 
-<img src="https://raw.githubusercontent.com/sjain882/Blue-Sky-Tool-OMSI_DarkTheme/refs/heads/master/Previews/1.png?raw=true" width="100%" height="100%"/>
+<img src="https://raw.githubusercontent.com/sjain882/Blue-Sky-Tool-OMSI_DarkTheme/refs/heads/master/Previews/1%20New.png?raw=true" width="100%" height="100%"/>
 
-<img src="https://raw.githubusercontent.com/sjain882/Blue-Sky-Tool-OMSI_DarkTheme/refs/heads/master/Previews/2.png?raw=true" width="100%" height="100%"/>
+<img src="https://raw.githubusercontent.com/sjain882/Blue-Sky-Tool-OMSI_DarkTheme/refs/heads/master/Previews/2%20New.png?raw=true" width="100%" height="100%"/>
 
 ## Download
 
