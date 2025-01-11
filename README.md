@@ -7,6 +7,12 @@ Blue Sky Tool is developed as an advanced version of OMSI Map Tools. Blue Sky al
 - Original software credits: CDLBT ([github](https://github.com/cdlbt-co) / [website](https://cdlbt.co/))
 - Fork modification credits: sjain882 ([github](https://github.com/sjain882))
 
+## Download:
+
+- Download this dark theme version: https://github.com/sjain882/Blue-Sky-Tool-OMSI_DarkTheme/releases/latest
+
+- Download original program: [cdlbt.co/bluesky](https://cdlbt.co/bluesky/)
+
 ## Changes: 
 
 - Upgrade from .NET Framework 4.0 -> .NET 8.0
@@ -35,12 +41,6 @@ Preview:
 <img src="https://raw.githubusercontent.com/sjain882/Blue-Sky-Tool-OMSI_DarkTheme/refs/heads/master/Previews/MapLoaded.png?raw=true" width="100%" height="100%"/>
 
 <img src="https://raw.githubusercontent.com/sjain882/Blue-Sky-Tool-OMSI_DarkTheme/refs/heads/master/Previews/GndTex.png?raw=true" width="100%" height="100%"/>
-
-## Download
-
-Download this dark theme version: https://github.com/sjain882/Blue-Sky-Tool-OMSI_DarkTheme/releases/latest
-
-Download original program: [cdlbt.co/bluesky](https://cdlbt.co/bluesky/)
 
 ## How to scan for missing files
 
