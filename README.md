@@ -9,9 +9,8 @@ Blue Sky Tool is developed as an advanced version of OMSI Map Tools. Blue Sky al
 
 ## Download:
 
-- Download this dark theme version: https://github.com/sjain882/Blue-Sky-Tool-OMSI_DarkTheme/releases/latest
-
-- Download original program: [cdlbt.co/bluesky](https://cdlbt.co/bluesky/)
+- Download this dark theme version [here](https://github.com/sjain882/Blue-Sky-Tool-OMSI_DarkTheme/releases/latest)
+- Download original program [here](https://cdlbt.co/bluesky/)
 
 ## Changes: 
 
