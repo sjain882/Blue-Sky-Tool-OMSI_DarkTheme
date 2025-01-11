@@ -26,7 +26,6 @@ namespace Blue_Sky
         MapLoadScreen mapLoadScreen;
         ThemeChanger themeChanger2;
 
-
         public MainWindow()
         {
 
@@ -107,6 +106,7 @@ namespace Blue_Sky
                 tabSplines_Clear();
                 tabAicars_Clear();
                 tabHumans_Clear();
+                tabGndTex_Clear();
 
                 txtMapDir.Text = pickMapFile.FileName;
 
@@ -139,6 +139,8 @@ namespace Blue_Sky
                     List<string> aicarsMissing = new List<string>();
                     List<string> humans = new List<string>();
                     List<string> humansMissing = new List<string>();
+                    List<string> groundTex = new List<string>();
+                    List<string> groundTexMissing = new List<string>();
 
                     // Read map file
                     for (int i = 0; i < mapFile.Length; i++)
@@ -180,6 +182,40 @@ namespace Blue_Sky
                                 }
                             }
                         }
+
+
+                        // Read ground textures
+                        else if (mapFile[i].StartsWith("[groundtex]") && (i + 2) < mapFile.Length)
+                        {
+
+                            // First texture
+                            if (!groundTex.Contains(mapFile[i + 1]))
+                            {
+                                groundTex.Add(mapFile[i + 1]);
+
+                                // Check missing ground textures
+                                // Could be in e.g, OMSI 2\Splines or OMSI 2\Textures, so must search from game root
+                                if (!File.Exists(Directory.GetParent(Directory.GetParent(Directory.GetParent(pickMapFile.FileName).ToString()).ToString()) + "\\" + mapFile[i + 1]))
+                                {
+                                    groundTexMissing.Add(mapFile[i + 1]);
+                                }
+                            }
+
+                            // Second texture
+                            if (!groundTex.Contains(mapFile[i + 2]))
+                            {
+                                groundTex.Add(mapFile[i + 2]);
+
+                                // Check missing ground textures
+                                // Could be in e.g, OMSI 2\Splines or OMSI 2\Textures, so must search from game root
+                                if (!File.Exists(Directory.GetParent(Directory.GetParent(Directory.GetParent(pickMapFile.FileName).ToString()).ToString()) + "\\" + mapFile[i + 2]))
+                                {
+                                    groundTexMissing.Add(mapFile[i + 2]);
+                                }
+                            }
+                        }
+
+
                     }
 
                     // Count tile after reading map file
@@ -380,6 +416,8 @@ namespace Blue_Sky
                     aicarsMissing.Sort();
                     humans.Sort();
                     humansMissing.Sort();
+                    groundTex.Sort();
+                    groundTexMissing.Sort();
 
                     // Use dispatch invoke to print list to textboxes
                     foreach (string file in tiles)
@@ -452,6 +490,20 @@ namespace Blue_Sky
                             txtHumansMissingList.Text += file + "\r\n";
                         }));
                     }
+                    foreach (string file in groundTex)
+                    {
+                        this.Dispatcher.Invoke((Action)(() =>
+                        {
+                            txtGndTexList.Text += file + "\r\n";
+                        }));
+                    }
+                    foreach (string file in groundTexMissing)
+                    {
+                        this.Dispatcher.Invoke((Action)(() =>
+                        {
+                            txtGndTexMissingList.Text += file + "\r\n";
+                        }));
+                    }
 
                     // Output final data to first page
                     this.Dispatcher.Invoke((Action)(() =>
@@ -472,6 +524,9 @@ namespace Blue_Sky
                         txtMapHumanCount.Text = humans.Count.ToString();
                         txtMapHumanMissing.Text = humansMissing.Count.ToString();
                         tabHuman.Header = "Humans (" + humansMissing.Count.ToString() + " Missing)";
+                        txtGndTexCount.Text = groundTex.Count.ToString();
+                        txtGndTextMissing.Text = groundTexMissing.Count.ToString();
+                        tabGndTex.Header = "Ground Textures (" + groundTexMissing.Count.ToString() + " Missing)";
 
                         // Try to read map picture
                         try
@@ -502,6 +557,8 @@ namespace Blue_Sky
             txtMapSplineCount.Clear();
             txtMapSplineMissing.Clear();
             txtMapDescription.Clear();
+            txtGndTexCount.Clear();
+            txtGndTextMissing.Clear();
         }
 
         private void tabObjects_Clear()
@@ -524,6 +581,11 @@ namespace Blue_Sky
         {
             txtHumansList.Clear();
             txtHumansMissingList.Clear();
+        }
+        private void tabGndTex_Clear()
+        {
+            txtGndTexList.Clear();
+            txtGndTexMissingList.Clear();
         }
         private void tabLogFile_Clear()
         {

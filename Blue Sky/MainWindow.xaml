@@ -59,7 +59,7 @@
                         </Grid.ColumnDefinitions>
                         <Grid Grid.Column="0" Margin="4">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="350" />
+                                <RowDefinition Height="410" />
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <StackPanel Grid.Row="0">
@@ -223,6 +223,41 @@
                                             TextWrapping="NoWrap" />
                                     </StackPanel>
                                 </Grid>
+
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0">
+                                        <Label
+                                            Margin="4,4,4,0"
+                                            Padding="0,4"
+                                            Content="Total Ground Textures" />
+                                        <TextBox
+                                            x:Name="txtGndTexCount"
+                                            Margin="4,0,4,4"
+                                            Padding="4"
+                                            IsReadOnly="True"
+                                            TextWrapping="NoWrap" />
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="1">
+                                        <Label
+                                            Margin="4,4,4,0"
+                                            Padding="0,4"
+                                            Content="Missing Ground Textures" />
+                                        <TextBox
+                                            x:Name="txtGndTextMissing"
+                                            Margin="4,0,4,4"
+                                            Padding="4"
+                                            IsReadOnly="True"
+                                            TextWrapping="NoWrap" />
+                                    </StackPanel>
+                                </Grid>
+
+
+
                             </StackPanel>
                             <Grid
                                 Grid.Row="1"
@@ -510,6 +545,64 @@
                     </Grid>
                 </Grid>
             </TabItem>
+
+
+
+            <TabItem
+                x:Name="tabGndTex"
+                Padding="8,4"
+                Header="Ground Textures">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" Margin="4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Label
+                            Grid.Row="0"
+                            Margin="4,0"
+                            VerticalAlignment="Bottom"
+                            Content="All ground textures:" />
+                        <TextBox
+                            x:Name="txtGndTexList"
+                            Grid.Row="1"
+                            Margin="4,0,4,4"
+                            Padding="4"
+                            FontFamily="Courier New"
+                            IsReadOnly="True"
+                            TextWrapping="Wrap"
+                            VerticalScrollBarVisibility="Auto" />
+                    </Grid>
+                    <Grid Grid.Column="1" Margin="4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Label
+                            Grid.Row="0"
+                            Margin="4,0"
+                            VerticalAlignment="Bottom"
+                            Content="Missing ground textures:" />
+                        <TextBox
+                            x:Name="txtGndTexMissingList"
+                            Grid.Row="1"
+                            Margin="4,0,4,4"
+                            Padding="4"
+                            FontFamily="Courier New"
+                            IsReadOnly="True"
+                            TextWrapping="Wrap"
+                            VerticalScrollBarVisibility="Auto" />
+                    </Grid>
+                </Grid>
+            </TabItem>
+
+
+
+
             <TabItem Padding="8,4" Header="Logfile">
                 <Grid
                     Margin="4"
