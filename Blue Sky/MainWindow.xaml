@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="BlueSkyWindow"
     Title="Blue Sky Tool"
-    Width="1024"
+    Width="1114"
     Height="728"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
