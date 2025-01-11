@@ -34,6 +34,8 @@ Preview:
 
 <img src="https://raw.githubusercontent.com/sjain882/Blue-Sky-Tool-OMSI_DarkTheme/refs/heads/master/Previews/MapLoaded.png?raw=true" width="100%" height="100%"/>
 
+<img src="https://raw.githubusercontent.com/sjain882/Blue-Sky-Tool-OMSI_DarkTheme/refs/heads/master/Previews/GndTex.png?raw=true" width="100%" height="100%"/>
+
 ## Download
 
 Download this dark theme version: https://github.com/sjain882/Blue-Sky-Tool-OMSI_DarkTheme/releases/latest
